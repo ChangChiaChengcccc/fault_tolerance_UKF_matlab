@@ -65,8 +65,8 @@ X_sigma_points = [X0 X_plus_vec X_minus_vec];
     % get Y_sensor(with noise), Y_k_minus
     Y_sensor(1) = next_X_vec(1,1)+wgn(1, 1, -60);  % z
     Y_sensor(2) = next_X_vec(2,1)+wgn(1, 1, -50);  % z_dot
-    Y_sensor([4 6 8]) = next_X_vec([4 6 8],1);     % angular velocity
-    Y_sensor([3 5 7]) = next_X_vec([3 5 7],1)+wgn(3, 1, -42); % orientation
+    Y_sensor([4 6 8]) = next_X_vec([4 6 8],1)+wgn(3, 1, -42);     % angular velocity
+    Y_sensor([3 5 7]) = next_X_vec([3 5 7],1); % orientation
     
     Y = next_X_vec(1:8,:); %(8*25)
     Y_k_minus = average_Y_fun(L,lambda,Y); %(8*1)
