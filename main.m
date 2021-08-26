@@ -109,7 +109,7 @@ plot(1:1000,X_k_vec_without_ukf(1,:),'--','LineWidth',2);
 title('Z height with iteration')
 xlabel('iteration')
 ylabel('z height')
-legend('model with noise','after ukf')
+legend('model with noise after ukf','model without noise')
 
 subplot(4,1,2)
 plot(1:1000,X_k_vec_ukf(3,:),'-','LineWidth',2); hold on;
@@ -141,7 +141,7 @@ plot(1:1000,X_k_vec_without_ukf(2,:),'--','LineWidth',2);
 title('Z velocity with iteration')
 xlabel('iteration')
 ylabel('Z velocity(m/s)')
-legend('model with noise','after ukf')
+legend('model with noise after ukf','model without noise')
 
 subplot(4,1,2)
 plot(1:1000,X_k_vec_ukf(4,:),'-','LineWidth',2); hold on;
@@ -174,7 +174,7 @@ title('e1 percentage with iteration')
 xlabel('iteration')
 ylabel('e1 percentage')
 axis([0 1000 -5 5])
-legend('model with noise','after ukf')
+legend('model with noise after ukf','model without noise')
 
 subplot(4,1,2)
 plot(1:1000,X_k_vec_ukf(10,:),'-','LineWidth',1.3); hold on;
@@ -201,102 +201,102 @@ ylabel('e4 percentage')
 axis([0 1000 -5 5])
 
 %% test
-% position
-figure(4)
-title('Position')
-subplot(4,1,1)
-plot(1:30,X_k_vec_ukf(1,1:30),'-'); hold on;
-plot(1:30,X_k_vec_without_ukf(1,1:30),'--');
-title('Z height with iteration')
-xlabel('iteration')
-ylabel('z height')
-legend('model with noise','after ukf')
-
-subplot(4,1,2)
-plot(1:30,X_k_vec_ukf(3,1:30),'-'); hold on;
-plot(1:30,X_k_vec_without_ukf(3,1:30),'--');
-title('roll with iteration')
-xlabel('iteration')
-ylabel('roll(radian)')
-
-subplot(4,1,3)
-plot(1:30,X_k_vec_ukf(5,1:30),'-'); hold on;
-plot(1:30,X_k_vec_without_ukf(5,1:30),'--');
-title('pitch with iteration')
-xlabel('iteration')
-ylabel('pitch(radian)')
-
-subplot(4,1,4)
-plot(1:30,X_k_vec_ukf(7,1:30),'-'); hold on;
-plot(1:30,X_k_vec_without_ukf(7,1:30),'--');
-title('yaw with iteration')
-xlabel('iteration')
-ylabel('yaw(radian)')
-
-% velocity
-figure(5)
-title('Velocity')
-subplot(4,1,1)
-plot(1:30,X_k_vec_ukf(2,1:30),'-','LineWidth',2); hold on;
-plot(1:30,X_k_vec_without_ukf(2,1:30),'--','LineWidth',2);
-title('Z velocity with iteration')
-xlabel('iteration')
-ylabel('Z velocity(m/s)')
-legend('model with noise','after ukf')
-
-subplot(4,1,2)
-plot(1:30,X_k_vec_ukf(4,1:30),'-','LineWidth',2); hold on;
-plot(1:30,X_k_vec_without_ukf(4,1:30),'--','LineWidth',2);
-title('roll velocity with iteration')
-xlabel('iteration')
-ylabel('roll_velocity(radian/s)')
-
-subplot(4,1,3)
-plot(1:30,X_k_vec_ukf(6,1:30),'-','LineWidth',2); hold on;
-plot(1:30,X_k_vec_without_ukf(6,1:30),'--','LineWidth',2);
-title('pitch velocity with iteration')
-xlabel('iteration')
-ylabel('pitch_velocity(radian/s)')
-
-subplot(4,1,4)
-plot(1:30,X_k_vec_ukf(8,1:30),'-','LineWidth',2); hold on;
-plot(1:30,X_k_vec_without_ukf(8,1:30),'--','LineWidth',2);
-title('yaw velocity with iteration')
-xlabel('iteration')
-ylabel('yaw_velocity(radian/s)')
-
-% efficiency
-figure(6)
-title('Efficiency')
-subplot(4,1,1)
-plot(1:30,X_k_vec_ukf(9,1:30),'-','LineWidth',1.3); hold on;
-plot(1:30,X_k_vec_without_ukf(9,1:30),'--','LineWidth',1.3);
-title('e1 percentage with iteration')
-xlabel('iteration')
-ylabel('e1 percentage')
-axis([0 30 -5 5])
-legend('model with noise','after ukf')
-
-subplot(4,1,2)
-plot(1:30,X_k_vec_ukf(10,1:30),'-','LineWidth',1.3); hold on;
-plot(1:30,X_k_vec_without_ukf(10,1:30),'--','LineWidth',1.3);
-title('e2 percentage with iteration')
-xlabel('iteration')
-ylabel('e2 percentage')
-axis([0 30 -5 5])
-
-subplot(4,1,3)
-plot(1:30,X_k_vec_ukf(11,1:30),'-','LineWidth',1.3); hold on;
-plot(1:30,X_k_vec_without_ukf(11,1:30),'--','LineWidth',1.3);
-title('e3 percentage with iteration')
-xlabel('iteration')
-ylabel('e3 percentage')
-axis([0 30 -5 5])
-
-subplot(4,1,4)
-plot(1:30,X_k_vec_ukf(12,1:30),'-','LineWidth',1.3); hold on;
-plot(1:30,X_k_vec_without_ukf(12,1:30),'--','LineWidth',1.3);
-title('e4 percentage with iteration')
-xlabel('iteration')
-ylabel('e4 percentage')
-axis([0 30 -5 5])
+% % position
+% figure(4)
+% title('Position')
+% subplot(4,1,1)
+% plot(1:30,X_k_vec_ukf(1,1:30),'-'); hold on;
+% plot(1:30,X_k_vec_without_ukf(1,1:30),'--');
+% title('Z height with iteration')
+% xlabel('iteration')
+% ylabel('z height')
+% legend('model with noise after ukf','model without noise')
+% 
+% subplot(4,1,2)
+% plot(1:30,X_k_vec_ukf(3,1:30),'-'); hold on;
+% plot(1:30,X_k_vec_without_ukf(3,1:30),'--');
+% title('roll with iteration')
+% xlabel('iteration')
+% ylabel('roll(radian)')
+% 
+% subplot(4,1,3)
+% plot(1:30,X_k_vec_ukf(5,1:30),'-'); hold on;
+% plot(1:30,X_k_vec_without_ukf(5,1:30),'--');
+% title('pitch with iteration')
+% xlabel('iteration')
+% ylabel('pitch(radian)')
+% 
+% subplot(4,1,4)
+% plot(1:30,X_k_vec_ukf(7,1:30),'-'); hold on;
+% plot(1:30,X_k_vec_without_ukf(7,1:30),'--');
+% title('yaw with iteration')
+% xlabel('iteration')
+% ylabel('yaw(radian)')
+% 
+% % velocity
+% figure(5)
+% title('Velocity')
+% subplot(4,1,1)
+% plot(1:30,X_k_vec_ukf(2,1:30),'-','LineWidth',2); hold on;
+% plot(1:30,X_k_vec_without_ukf(2,1:30),'--','LineWidth',2);
+% title('Z velocity with iteration')
+% xlabel('iteration')
+% ylabel('Z velocity(m/s)')
+% legend('model with noise after ukf','model without noise')
+% 
+% subplot(4,1,2)
+% plot(1:30,X_k_vec_ukf(4,1:30),'-','LineWidth',2); hold on;
+% plot(1:30,X_k_vec_without_ukf(4,1:30),'--','LineWidth',2);
+% title('roll velocity with iteration')
+% xlabel('iteration')
+% ylabel('roll_velocity(radian/s)')
+% 
+% subplot(4,1,3)
+% plot(1:30,X_k_vec_ukf(6,1:30),'-','LineWidth',2); hold on;
+% plot(1:30,X_k_vec_without_ukf(6,1:30),'--','LineWidth',2);
+% title('pitch velocity with iteration')
+% xlabel('iteration')
+% ylabel('pitch_velocity(radian/s)')
+% 
+% subplot(4,1,4)
+% plot(1:30,X_k_vec_ukf(8,1:30),'-','LineWidth',2); hold on;
+% plot(1:30,X_k_vec_without_ukf(8,1:30),'--','LineWidth',2);
+% title('yaw velocity with iteration')
+% xlabel('iteration')
+% ylabel('yaw_velocity(radian/s)')
+% 
+% % efficiency
+% figure(6)
+% title('Efficiency')
+% subplot(4,1,1)
+% plot(1:30,X_k_vec_ukf(9,1:30),'-','LineWidth',1.3); hold on;
+% plot(1:30,X_k_vec_without_ukf(9,1:30),'--','LineWidth',1.3);
+% title('e1 percentage with iteration')
+% xlabel('iteration')
+% ylabel('e1 percentage')
+% axis([0 30 -5 5])
+% legend('model with noise after ukf','model without noise')
+% 
+% subplot(4,1,2)
+% plot(1:30,X_k_vec_ukf(10,1:30),'-','LineWidth',1.3); hold on;
+% plot(1:30,X_k_vec_without_ukf(10,1:30),'--','LineWidth',1.3);
+% title('e2 percentage with iteration')
+% xlabel('iteration')
+% ylabel('e2 percentage')
+% axis([0 30 -5 5])
+% 
+% subplot(4,1,3)
+% plot(1:30,X_k_vec_ukf(11,1:30),'-','LineWidth',1.3); hold on;
+% plot(1:30,X_k_vec_without_ukf(11,1:30),'--','LineWidth',1.3);
+% title('e3 percentage with iteration')
+% xlabel('iteration')
+% ylabel('e3 percentage')
+% axis([0 30 -5 5])
+% 
+% subplot(4,1,4)
+% plot(1:30,X_k_vec_ukf(12,1:30),'-','LineWidth',1.3); hold on;
+% plot(1:30,X_k_vec_without_ukf(12,1:30),'--','LineWidth',1.3);
+% title('e4 percentage with iteration')
+% xlabel('iteration')
+% ylabel('e4 percentage')
+% axis([0 30 -5 5])
